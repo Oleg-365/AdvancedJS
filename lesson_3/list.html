@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3. List in LocalStorage</title>
+</head>
+
+<body>
+    <input type="text" id="item_input" placeholder="Введите пункт">
+    <button id="add_btn">Добавить</button>
+    <ul id="item_list"></ul>
+
+    <script>
+        // Получаем ссылки на элементы страницы
+        const item_input = document.getElementById('item_input');
+        const add_btn = document.getElementById('add_btn');
+        const item_list = document.getElementById('item_list');
+
+        // Получаем сохраненный список покупок из LocalStorage (если есть)
+        let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+
+        // Функция для добавления списка покупок на странице и сохранения его в LocalStorage
+        const updateShoppingList = () => {
+            // Очищаем список покупок на странице
+            item_list.innerHTML = '';
+
+            // Перебираем список покупок
+            shoppingList.forEach((item, index) => {
+                // Создаем новый элемент списка покупок
+                const newItem = document.createElement('li');
+                newItem.innerText = `${index + 1}. ${item}`;
+                // Добавляем новый элемент списка покупок на страницу
+                item_list.appendChild(newItem);
+            });
+
+            // Сохраняем список покупок в LocalStorage
+            localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+        }
+
+        // Обработчик события для кнопки Добавить
+        add_btn.addEventListener('click', () => {
+            // Получаем значение из поля ввода
+            const newItem = item_input.value.trim();
+
+            if (newItem !== '') {
+                // Добавляем новый элемент в список покупок
+                shoppingList.push(newItem);
+                // Обновляем список покупок на странице и сохраняем его в LocalStorage
+                updateShoppingList();
+                // Очищаем поле ввода
+                item_input.value = '';
+            }
+        });
+
+        // Обновляем список покупок на странице и сохраняем его в LocalStorage при загрузке страницы
+        updateShoppingList();
+
+    </script>
+</body>
+
+</html>

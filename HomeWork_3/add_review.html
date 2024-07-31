@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 3. LocalStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Добавить отзыв</h1>
+        <form id="addReviewForm">
+            <div>
+                <label for="productName">Название продукта:</label>
+                <input type="text" id="productName" required>
+            </div>
+            <div>
+                <label for="review">Отзыв:</label>
+                <textarea id="review" rows="4" required></textarea>
+            </div>
+            <button type="submit">Добавить отзыв</button>
+        </form>
+        <a href="view_reviews.html">
+            <p>View reviews</p>
+        </a>
+    </div>
+
+    <script src="add_review.js"></script>
+
+</body>
+
+</html>

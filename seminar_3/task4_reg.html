@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar 3. Task 4 - Registration</title>
+    <link rel="stylesheet" href="task4.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Регистрация</h1>
+        <form id="registrationForm">
+            <div>
+                <label for="username">Логин:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            window.location.href = 'task4_login.html';
+        });
+    </script>
+
+</body>
+
+</html>

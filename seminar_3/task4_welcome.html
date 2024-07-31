@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar 3. Task 4 - Welcome</title>
+    <link rel="stylesheet" href="task4.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Добро пожаловать!</h1>
+        <p>Вы успешно авторизованы.</p>
+        <button id="logoutBtn">Выйти</button>
+    </div>
+
+    <script>
+        document.getElementById('logoutBtn').addEventListener('click', function () {
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            window.location.href = 'task4_reg.html';
+        });
+    </script>
+
+</body>
+
+</html>

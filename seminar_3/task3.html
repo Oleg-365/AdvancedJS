@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar 3. Task 3 - Furniture</title>
+    <link rel="stylesheet" href="task3.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div>
+            <label for="table">Выберите стол:</label>
+            <select id="table">
+                <option value="oak">Дуб</option>
+                <option value="pine">Сосна</option>
+                <option value="walnut">Орех</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="chair">Выберите стул:</label>
+            <select id="chair">
+                <option value="leather">Кожа</option>
+                <option value="fabric">Ткань</option>
+                <option value="plastic">Пластик</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="sofa">Выберите диван:</label>
+            <select id="sofa">
+                <option value="modern">Современный</option>
+                <option value="classic">Классический</option>
+                <option value="rustic">Деревенский</option>
+            </select>
+        </div>
+
+        <button id="save">Сохранить комплект</button>
+        <button id="clear">Очистить настройки</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="task3.js"></script>
+
+</body>
+
+</html>
